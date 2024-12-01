@@ -1,0 +1,13 @@
+1. When overriding the equals() method of the Object class, you will have to cast the Object parameter obj to the type of Object that you are dealing with. For example, in the Media class, you must cast the Object obj to a Media, and then check the equality of the two objects’ attributes as the above requirements (i.e., title for Media; title and length for Track). If the passing object is not an instance of Media, what happens?
+
+-Nếu đối tượng không phải là instance của Media, phương thức equals() sẽ trả về false, vì các lớp khác không thể được so sánh với Media.
+
+2. What class should implement the Comparable interface?
+Lớp Media (hoặc các lớp con như Book, DVD, CD) nên implement giao diện Comparable.
+3. In those classes, how should you implement the compareTo() method to reflect the ordering that we want?
+Trong phương thức compareTo(), so sánh các thuộc tính như title và cost
+4. Can we have two ordering rules of the item (by title then cost and by cost then title) if we use this Comparable interface approach?
+Không. Giao diện Comparable chỉ cho phép một quy tắc sắp xếp duy nhất trong phương thức compareTo().
+5.Suppose the DVDs has a different ordering rule from the other media types, that is by title, then decreasing length, then cost. How would you modify your code to allow this?
+Triển khai phương thức compareTo() riêng trong lớp DVD để áp dụng quy tắc sắp xếp đặc biệt.
+
